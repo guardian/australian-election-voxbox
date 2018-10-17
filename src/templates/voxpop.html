@@ -1,0 +1,82 @@
+<div class="interactive-wrapper">
+
+	<h2 id="voxbox_headline"></h2>
+
+	<div id="voxbox_intro"></div>
+
+	<div id="target">
+		
+		<div class="headshot_block_container">
+
+			{{#each months}}
+
+				<h2>{{this.key}}</h2>
+
+				<div class="headshot_block_container">
+
+					{{#each values}}
+
+					<div class="headshot_block">
+
+						<div class="headshot {{mood}}" on-click="['activate', index, @index]" {{#if content}}style="background-color:red"{{/if}} ></div>
+
+					</div>
+
+					{{/each}}
+
+				</div>
+
+				{{#each values}}
+
+					{{#if content}}
+
+					<div class="arrow__container">
+
+						<div class="arrow__block" style=" margin-left: calc(100% / 5 * {{@index}});">
+							
+							<div class="arrow__box">
+								<div id="triangle-up"></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="content">
+
+						<div class="profile_pic"></div>
+
+						<div class="user_bio">
+							<p>
+								<strong>
+									{{name}}<br/>
+									{{age}}<br/>
+									{{job}}<br/>
+									{{suburb}}
+								</strong>
+							</p>
+						</div>
+
+						<div class="user_response">
+
+						 	<p>{{text}}</p>
+
+						</div>
+
+					</div>
+
+					{{/if}}
+
+				{{/each}}
+
+			{{/each}}
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
