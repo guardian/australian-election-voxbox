@@ -29,11 +29,15 @@
 	position: relative;
 }
 
+#voxbox_headline {
+	margin-bottom:10px;
+}
+
 .headshot_block {
 	height: 0px;
 	float: left;
 	width: 20%!important;
-	padding-bottom: 20%!important;
+	padding-bottom: 17%!important;
 }  
 
 #target {
@@ -95,16 +99,24 @@
 .arrow__box{
   width: 30px;
   height: 20px; 
-  margin-left: calc(50% - 15px);
+  margin-left: calc(50% - 2px);
+  border-left:2px solid black;
 }
 
-#triangle-up {
+.monthHeading {
+	font-family: 'Guardian Text Sans Web', 'Agate Sans', sans-serif; 
+	color: #767676;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/*#triangle-up {
       width: 0;
       height: 0;
       border-left: 15px solid transparent;
       border-right: 15px solid transparent;
-      border-bottom: 20px solid darkgrey;
-    }
+      border-bottom: 20px solid rgba(0, 122, 255, 1);
+    }*/
   
 
 
@@ -119,23 +131,83 @@
 	display: inline-block;
 	padding: 20px;
 	overflow: hidden;
-	background-color: darkgrey;
-	color: white;
-	
+	background-color: #FFF;
 	line-height: 20px;
+	border:2px solid black;
 }
+
+.bigQuote {
+	
+    font-family: "Guardian Text Egyptian Web", Georgia, serif;
+    float: left;
+
+    @include mq($until: tablet) {
+       font-size: 30px;
+       width: 10%;
+       margin-top: 10px;
+    }
+
+    @include mq($from: tablet) {
+       font-size: 50px;
+       width: 5%;
+       margin-top: 15px;
+    }
+
+}
+
+.innerText {
+	float: left;
+	width:95%;
+
+	@include mq($until: tablet) {
+
+       width: 90%;
+
+    }
+
+    @include mq($from: tablet) {
+
+       width: 95%;
+
+    }
+}
+
+.quoteWrapper {
+
+}
+
 
 .content strong {
 	line-height: 18px;
-	color: black;
+	font-weight: bold;
+}
+
+.name-age {
+
+	font-family: "Guardian Text Egyptian Web", Georgia, serif;
+	@include mq($until: tablet) {
+    	font-size: 16px;
+    	line-height:16px;
+    }
+
+    @include mq($from: tablet) {
+    	font-size: 18px;
+    	line-height: 20px;
+    }
+
 }
 
 .profile_pic {
 	width: 100px;
 	height: 100px;
-	background-color: red;
+	background-color: #6bb1fd;
 	float: left;
 	margin-right: 20px;
+	border-radius: 50%;
+}
+
+.profile_pic img {
+	border-radius: 50%;
 }
 
 .user_bio {
@@ -144,17 +216,18 @@
 
     @include mq($until: tablet) {
     	font-size: 14px;
-    	font-size: 16px;
+    	line-height:16px;
     }
 
     @include mq($from: tablet) {
     	font-size: 16px;
-    	font-size: 20px;
+    	line-height: 20px;
     }
 
 }
 
 .user_response {
+	font-family: 'Guardian Text Sans Web', 'Agate Sans', sans-serif; 
 	width: 100%;
 	display: block;
 	float: left;

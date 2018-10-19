@@ -6,10 +6,12 @@ Ractive.DEBUG = false;
 
 export class Voxbox {
 
-	constructor(data) {
+	constructor(data,settings) {
 
 		var self = this
 
+
+		this.settings = {"title": settings[0].title, "standfirst": settings[0].standfirst}
 		this.order = ['positive', 'indifferent', 'negative']
 
 		this.responses = {
@@ -17,6 +19,7 @@ export class Voxbox {
 			months : self.sortByColumn('date', data)
 
 		}
+
 
 		for (var i = 0; i < this.responses.months.length; i++) {
 
@@ -42,7 +45,7 @@ export class Voxbox {
 
         this.ractive = new Ractive({
             el: '#app',
-            data: self.responses,
+            data: {"responses":self.responses,"settings":self.settings},
             template: template
         })
 
@@ -60,7 +63,7 @@ export class Voxbox {
 
 			self.responses.months[group].values[item].content = true
 
-        	self.ractive.set(self.responses)
+        	self.ractive.set({"responses":self.responses, "settings":self.settings})
 
         })
 
